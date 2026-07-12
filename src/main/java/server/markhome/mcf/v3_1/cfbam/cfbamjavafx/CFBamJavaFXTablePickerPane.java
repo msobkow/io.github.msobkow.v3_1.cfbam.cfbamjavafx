@@ -105,9 +105,9 @@ implements ICFBamJavaFXTablePaneList
 	protected TableColumn<ICFBamTableObj, Boolean> tableColumnHasAuditColumns = null;
 	protected TableColumn<ICFBamTableObj, Boolean> tableColumnIsMutable = null;
 	protected TableColumn<ICFBamTableObj, Boolean> tableColumnIsServerOnly = null;
-	protected TableColumn<ICFBamTableObj, ICFBamSchema.LoaderBehaviourEnum> tableColumnLoaderBehaviour = null;
-	protected TableColumn<ICFBamTableObj, ICFBamSchema.SecScopeEnum> tableColumnSecScope = null;
-	protected TableColumn<ICFBamTableObj, ICFBamSchema.CodeVisibilityEnum> tableColumnCodeVis = null;
+	protected TableColumn<ICFBamTableObj, ICFBamPubSchema.LoaderBehaviourEnum> tableColumnLoaderBehaviour = null;
+	protected TableColumn<ICFBamTableObj, ICFBamPubSchema.SecScopeEnum> tableColumnSecScope = null;
+	protected TableColumn<ICFBamTableObj, ICFBamPubSchema.CodeVisibilityEnum> tableColumnCodeVis = null;
 	protected TableColumn<ICFBamTableObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 	protected TableColumn<ICFBamTableObj, ICFBamIndexObj> tableColumnLookupLookupIndex = null;
 	protected TableColumn<ICFBamTableObj, ICFBamIndexObj> tableColumnLookupAltIndex = null;
@@ -487,70 +487,70 @@ implements ICFBamJavaFXTablePaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnIsServerOnly );
-		tableColumnLoaderBehaviour = new TableColumn<ICFBamTableObj,ICFBamSchema.LoaderBehaviourEnum>( "Loader Behaviour" );
-		tableColumnLoaderBehaviour.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableObj,ICFBamSchema.LoaderBehaviourEnum>,ObservableValue<ICFBamSchema.LoaderBehaviourEnum> >() {
-			public ObservableValue<ICFBamSchema.LoaderBehaviourEnum> call( CellDataFeatures<ICFBamTableObj, ICFBamSchema.LoaderBehaviourEnum> p ) {
+		tableColumnLoaderBehaviour = new TableColumn<ICFBamTableObj,ICFBamPubSchema.LoaderBehaviourEnum>( "Loader Behaviour" );
+		tableColumnLoaderBehaviour.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableObj,ICFBamPubSchema.LoaderBehaviourEnum>,ObservableValue<ICFBamPubSchema.LoaderBehaviourEnum> >() {
+			public ObservableValue<ICFBamPubSchema.LoaderBehaviourEnum> call( CellDataFeatures<ICFBamTableObj, ICFBamPubSchema.LoaderBehaviourEnum> p ) {
 				ICFBamTableObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFBamSchema.LoaderBehaviourEnum value = obj.getRequiredLoaderBehaviour();
-					ReadOnlyObjectWrapper<ICFBamSchema.LoaderBehaviourEnum> observable = new ReadOnlyObjectWrapper<ICFBamSchema.LoaderBehaviourEnum>();
+					ICFBamPubSchema.LoaderBehaviourEnum value = obj.getRequiredLoaderBehaviour();
+					ReadOnlyObjectWrapper<ICFBamPubSchema.LoaderBehaviourEnum> observable = new ReadOnlyObjectWrapper<ICFBamPubSchema.LoaderBehaviourEnum>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnLoaderBehaviour.setCellFactory( new Callback<TableColumn<ICFBamTableObj,ICFBamSchema.LoaderBehaviourEnum>,TableCell<ICFBamTableObj,ICFBamSchema.LoaderBehaviourEnum>>() {
-			@Override public TableCell<ICFBamTableObj,ICFBamSchema.LoaderBehaviourEnum> call(
-				TableColumn<ICFBamTableObj,ICFBamSchema.LoaderBehaviourEnum> arg)
+		tableColumnLoaderBehaviour.setCellFactory( new Callback<TableColumn<ICFBamTableObj,ICFBamPubSchema.LoaderBehaviourEnum>,TableCell<ICFBamTableObj,ICFBamPubSchema.LoaderBehaviourEnum>>() {
+			@Override public TableCell<ICFBamTableObj,ICFBamPubSchema.LoaderBehaviourEnum> call(
+				TableColumn<ICFBamTableObj,ICFBamPubSchema.LoaderBehaviourEnum> arg)
 			{
 				return new CFEnumTableCell<ICFBamTableObj,ICFBamSchema.LoaderBehaviourEnum>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnLoaderBehaviour );
-		tableColumnSecScope = new TableColumn<ICFBamTableObj,ICFBamSchema.SecScopeEnum>( "Security Scope" );
-		tableColumnSecScope.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableObj,ICFBamSchema.SecScopeEnum>,ObservableValue<ICFBamSchema.SecScopeEnum> >() {
-			public ObservableValue<ICFBamSchema.SecScopeEnum> call( CellDataFeatures<ICFBamTableObj, ICFBamSchema.SecScopeEnum> p ) {
+		tableColumnSecScope = new TableColumn<ICFBamTableObj,ICFBamPubSchema.SecScopeEnum>( "Security Scope" );
+		tableColumnSecScope.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableObj,ICFBamPubSchema.SecScopeEnum>,ObservableValue<ICFBamPubSchema.SecScopeEnum> >() {
+			public ObservableValue<ICFBamPubSchema.SecScopeEnum> call( CellDataFeatures<ICFBamTableObj, ICFBamPubSchema.SecScopeEnum> p ) {
 				ICFBamTableObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFBamSchema.SecScopeEnum value = obj.getRequiredSecScope();
-					ReadOnlyObjectWrapper<ICFBamSchema.SecScopeEnum> observable = new ReadOnlyObjectWrapper<ICFBamSchema.SecScopeEnum>();
+					ICFBamPubSchema.SecScopeEnum value = obj.getRequiredSecScope();
+					ReadOnlyObjectWrapper<ICFBamPubSchema.SecScopeEnum> observable = new ReadOnlyObjectWrapper<ICFBamPubSchema.SecScopeEnum>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnSecScope.setCellFactory( new Callback<TableColumn<ICFBamTableObj,ICFBamSchema.SecScopeEnum>,TableCell<ICFBamTableObj,ICFBamSchema.SecScopeEnum>>() {
-			@Override public TableCell<ICFBamTableObj,ICFBamSchema.SecScopeEnum> call(
-				TableColumn<ICFBamTableObj,ICFBamSchema.SecScopeEnum> arg)
+		tableColumnSecScope.setCellFactory( new Callback<TableColumn<ICFBamTableObj,ICFBamPubSchema.SecScopeEnum>,TableCell<ICFBamTableObj,ICFBamPubSchema.SecScopeEnum>>() {
+			@Override public TableCell<ICFBamTableObj,ICFBamPubSchema.SecScopeEnum> call(
+				TableColumn<ICFBamTableObj,ICFBamPubSchema.SecScopeEnum> arg)
 			{
 				return new CFEnumTableCell<ICFBamTableObj,ICFBamSchema.SecScopeEnum>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnSecScope );
-		tableColumnCodeVis = new TableColumn<ICFBamTableObj,ICFBamSchema.CodeVisibilityEnum>( "Table Code Visibility" );
-		tableColumnCodeVis.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableObj,ICFBamSchema.CodeVisibilityEnum>,ObservableValue<ICFBamSchema.CodeVisibilityEnum> >() {
-			public ObservableValue<ICFBamSchema.CodeVisibilityEnum> call( CellDataFeatures<ICFBamTableObj, ICFBamSchema.CodeVisibilityEnum> p ) {
+		tableColumnCodeVis = new TableColumn<ICFBamTableObj,ICFBamPubSchema.CodeVisibilityEnum>( "Table Code Visibility" );
+		tableColumnCodeVis.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTableObj,ICFBamPubSchema.CodeVisibilityEnum>,ObservableValue<ICFBamPubSchema.CodeVisibilityEnum> >() {
+			public ObservableValue<ICFBamPubSchema.CodeVisibilityEnum> call( CellDataFeatures<ICFBamTableObj, ICFBamPubSchema.CodeVisibilityEnum> p ) {
 				ICFBamTableObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFBamSchema.CodeVisibilityEnum value = obj.getRequiredCodeVis();
-					ReadOnlyObjectWrapper<ICFBamSchema.CodeVisibilityEnum> observable = new ReadOnlyObjectWrapper<ICFBamSchema.CodeVisibilityEnum>();
+					ICFBamPubSchema.CodeVisibilityEnum value = obj.getRequiredCodeVis();
+					ReadOnlyObjectWrapper<ICFBamPubSchema.CodeVisibilityEnum> observable = new ReadOnlyObjectWrapper<ICFBamPubSchema.CodeVisibilityEnum>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnCodeVis.setCellFactory( new Callback<TableColumn<ICFBamTableObj,ICFBamSchema.CodeVisibilityEnum>,TableCell<ICFBamTableObj,ICFBamSchema.CodeVisibilityEnum>>() {
-			@Override public TableCell<ICFBamTableObj,ICFBamSchema.CodeVisibilityEnum> call(
-				TableColumn<ICFBamTableObj,ICFBamSchema.CodeVisibilityEnum> arg)
+		tableColumnCodeVis.setCellFactory( new Callback<TableColumn<ICFBamTableObj,ICFBamPubSchema.CodeVisibilityEnum>,TableCell<ICFBamTableObj,ICFBamPubSchema.CodeVisibilityEnum>>() {
+			@Override public TableCell<ICFBamTableObj,ICFBamPubSchema.CodeVisibilityEnum> call(
+				TableColumn<ICFBamTableObj,ICFBamPubSchema.CodeVisibilityEnum> arg)
 			{
 				return new CFEnumTableCell<ICFBamTableObj,ICFBamSchema.CodeVisibilityEnum>();
 			}

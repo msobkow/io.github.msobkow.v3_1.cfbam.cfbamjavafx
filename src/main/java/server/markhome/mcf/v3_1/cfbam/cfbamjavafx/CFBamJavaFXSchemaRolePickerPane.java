@@ -95,7 +95,7 @@ implements ICFBamJavaFXSchemaRolePaneList
 	protected TableColumn<ICFBamSchemaRoleObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamSchemaRoleObj, String> tableColumnEnables = null;
 	protected TableColumn<ICFBamSchemaRoleObj, String> tableColumnIncludes = null;
-	protected TableColumn<ICFBamSchemaRoleObj, ICFBamSchema.RoleScopeEnum> tableColumnRoleScope = null;
+	protected TableColumn<ICFBamSchemaRoleObj, ICFBamPubSchema.RoleScopeEnum> tableColumnRoleScope = null;
 	protected TableColumn<ICFBamSchemaRoleObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 	protected TableView<ICFBamSchemaRoleObj> dataTable = null;
 	protected CFHBox hboxMenu = null;
@@ -235,24 +235,24 @@ implements ICFBamJavaFXSchemaRolePaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnIncludes );
-		tableColumnRoleScope = new TableColumn<ICFBamSchemaRoleObj,ICFBamSchema.RoleScopeEnum>( "Role Scope" );
-		tableColumnRoleScope.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,ICFBamSchema.RoleScopeEnum>,ObservableValue<ICFBamSchema.RoleScopeEnum> >() {
-			public ObservableValue<ICFBamSchema.RoleScopeEnum> call( CellDataFeatures<ICFBamSchemaRoleObj, ICFBamSchema.RoleScopeEnum> p ) {
+		tableColumnRoleScope = new TableColumn<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum>( "Role Scope" );
+		tableColumnRoleScope.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum>,ObservableValue<ICFBamPubSchema.RoleScopeEnum> >() {
+			public ObservableValue<ICFBamPubSchema.RoleScopeEnum> call( CellDataFeatures<ICFBamSchemaRoleObj, ICFBamPubSchema.RoleScopeEnum> p ) {
 				ICFBamSchemaRoleObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFBamSchema.RoleScopeEnum value = obj.getRequiredRoleScope();
-					ReadOnlyObjectWrapper<ICFBamSchema.RoleScopeEnum> observable = new ReadOnlyObjectWrapper<ICFBamSchema.RoleScopeEnum>();
+					ICFBamPubSchema.RoleScopeEnum value = obj.getRequiredRoleScope();
+					ReadOnlyObjectWrapper<ICFBamPubSchema.RoleScopeEnum> observable = new ReadOnlyObjectWrapper<ICFBamPubSchema.RoleScopeEnum>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnRoleScope.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,ICFBamSchema.RoleScopeEnum>,TableCell<ICFBamSchemaRoleObj,ICFBamSchema.RoleScopeEnum>>() {
-			@Override public TableCell<ICFBamSchemaRoleObj,ICFBamSchema.RoleScopeEnum> call(
-				TableColumn<ICFBamSchemaRoleObj,ICFBamSchema.RoleScopeEnum> arg)
+		tableColumnRoleScope.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum>,TableCell<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum>>() {
+			@Override public TableCell<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum> call(
+				TableColumn<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum> arg)
 			{
 				return new CFEnumTableCell<ICFBamSchemaRoleObj,ICFBamSchema.RoleScopeEnum>();
 			}

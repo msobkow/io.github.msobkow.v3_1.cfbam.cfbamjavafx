@@ -105,7 +105,7 @@ implements ICFBamJavaFXServerListFuncPaneList
 	protected TableColumn<ICFBamServerListFuncObj, String> tableColumnSuffix = null;
 	protected TableColumn<ICFBamServerListFuncObj, Boolean> tableColumnIsInstanceMethod = null;
 	protected TableColumn<ICFBamServerListFuncObj, Boolean> tableColumnIsServerOnly = null;
-	protected TableColumn<ICFBamServerListFuncObj, ICFBamSchema.CodeVisibilityEnum> tableColumnCodeVis = null;
+	protected TableColumn<ICFBamServerListFuncObj, ICFBamPubSchema.CodeVisibilityEnum> tableColumnCodeVis = null;
 	protected TableColumn<ICFBamServerListFuncObj, String> tableColumnJMethodBody = null;
 	protected TableColumn<ICFBamServerListFuncObj, String> tableColumnCppMethodBody = null;
 	protected TableColumn<ICFBamServerListFuncObj, String> tableColumnCsMethodBody = null;
@@ -408,24 +408,24 @@ implements ICFBamJavaFXServerListFuncPaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnIsServerOnly );
-		tableColumnCodeVis = new TableColumn<ICFBamServerListFuncObj,ICFBamSchema.CodeVisibilityEnum>( "Method Code Visibility" );
-		tableColumnCodeVis.setCellValueFactory( new Callback<CellDataFeatures<ICFBamServerListFuncObj,ICFBamSchema.CodeVisibilityEnum>,ObservableValue<ICFBamSchema.CodeVisibilityEnum> >() {
-			public ObservableValue<ICFBamSchema.CodeVisibilityEnum> call( CellDataFeatures<ICFBamServerListFuncObj, ICFBamSchema.CodeVisibilityEnum> p ) {
+		tableColumnCodeVis = new TableColumn<ICFBamServerListFuncObj,ICFBamPubSchema.CodeVisibilityEnum>( "Method Code Visibility" );
+		tableColumnCodeVis.setCellValueFactory( new Callback<CellDataFeatures<ICFBamServerListFuncObj,ICFBamPubSchema.CodeVisibilityEnum>,ObservableValue<ICFBamPubSchema.CodeVisibilityEnum> >() {
+			public ObservableValue<ICFBamPubSchema.CodeVisibilityEnum> call( CellDataFeatures<ICFBamServerListFuncObj, ICFBamPubSchema.CodeVisibilityEnum> p ) {
 				ICFBamServerMethodObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFBamSchema.CodeVisibilityEnum value = obj.getRequiredCodeVis();
-					ReadOnlyObjectWrapper<ICFBamSchema.CodeVisibilityEnum> observable = new ReadOnlyObjectWrapper<ICFBamSchema.CodeVisibilityEnum>();
+					ICFBamPubSchema.CodeVisibilityEnum value = obj.getRequiredCodeVis();
+					ReadOnlyObjectWrapper<ICFBamPubSchema.CodeVisibilityEnum> observable = new ReadOnlyObjectWrapper<ICFBamPubSchema.CodeVisibilityEnum>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnCodeVis.setCellFactory( new Callback<TableColumn<ICFBamServerListFuncObj,ICFBamSchema.CodeVisibilityEnum>,TableCell<ICFBamServerListFuncObj,ICFBamSchema.CodeVisibilityEnum>>() {
-			@Override public TableCell<ICFBamServerListFuncObj,ICFBamSchema.CodeVisibilityEnum> call(
-				TableColumn<ICFBamServerListFuncObj,ICFBamSchema.CodeVisibilityEnum> arg)
+		tableColumnCodeVis.setCellFactory( new Callback<TableColumn<ICFBamServerListFuncObj,ICFBamPubSchema.CodeVisibilityEnum>,TableCell<ICFBamServerListFuncObj,ICFBamPubSchema.CodeVisibilityEnum>>() {
+			@Override public TableCell<ICFBamServerListFuncObj,ICFBamPubSchema.CodeVisibilityEnum> call(
+				TableColumn<ICFBamServerListFuncObj,ICFBamPubSchema.CodeVisibilityEnum> arg)
 			{
 				return new CFEnumTableCell<ICFBamServerListFuncObj,ICFBamSchema.CodeVisibilityEnum>();
 			}

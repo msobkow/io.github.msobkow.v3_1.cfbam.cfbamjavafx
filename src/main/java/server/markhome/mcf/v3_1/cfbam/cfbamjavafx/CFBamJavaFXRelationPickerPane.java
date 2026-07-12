@@ -97,14 +97,14 @@ implements ICFBamJavaFXRelationPaneList
 	protected TableColumn<ICFBamRelationObj, String> tableColumnLabel = null;
 	protected TableColumn<ICFBamRelationObj, String> tableColumnShortDescription = null;
 	protected TableColumn<ICFBamRelationObj, String> tableColumnDescription = null;
-	protected TableColumn<ICFBamRelationObj, ICFBamSchema.RelationTypeEnum> tableColumnRelationType = null;
+	protected TableColumn<ICFBamRelationObj, ICFBamPubSchema.RelationTypeEnum> tableColumnRelationType = null;
 	protected TableColumn<ICFBamRelationObj, String> tableColumnDbName = null;
 	protected TableColumn<ICFBamRelationObj, String> tableColumnSuffix = null;
 	protected TableColumn<ICFBamRelationObj, Boolean> tableColumnIsRequired = null;
 	protected TableColumn<ICFBamRelationObj, Boolean> tableColumnIsXsdContainer = null;
 	protected TableColumn<ICFBamRelationObj, Boolean> tableColumnIsLateResolver = null;
 	protected TableColumn<ICFBamRelationObj, Boolean> tableColumnAllowAddendum = null;
-	protected TableColumn<ICFBamRelationObj, ICFBamSchema.CodeVisibilityEnum> tableColumnCodeVis = null;
+	protected TableColumn<ICFBamRelationObj, ICFBamPubSchema.CodeVisibilityEnum> tableColumnCodeVis = null;
 	protected TableColumn<ICFBamRelationObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 	protected TableColumn<ICFBamRelationObj, ICFBamIndexObj> tableColumnLookupFromIndex = null;
 	protected TableColumn<ICFBamRelationObj, ICFBamTableObj> tableColumnLookupToTable = null;
@@ -294,24 +294,24 @@ implements ICFBamJavaFXRelationPaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnDescription );
-		tableColumnRelationType = new TableColumn<ICFBamRelationObj,ICFBamSchema.RelationTypeEnum>( "RelationType" );
-		tableColumnRelationType.setCellValueFactory( new Callback<CellDataFeatures<ICFBamRelationObj,ICFBamSchema.RelationTypeEnum>,ObservableValue<ICFBamSchema.RelationTypeEnum> >() {
-			public ObservableValue<ICFBamSchema.RelationTypeEnum> call( CellDataFeatures<ICFBamRelationObj, ICFBamSchema.RelationTypeEnum> p ) {
+		tableColumnRelationType = new TableColumn<ICFBamRelationObj,ICFBamPubSchema.RelationTypeEnum>( "RelationType" );
+		tableColumnRelationType.setCellValueFactory( new Callback<CellDataFeatures<ICFBamRelationObj,ICFBamPubSchema.RelationTypeEnum>,ObservableValue<ICFBamPubSchema.RelationTypeEnum> >() {
+			public ObservableValue<ICFBamPubSchema.RelationTypeEnum> call( CellDataFeatures<ICFBamRelationObj, ICFBamPubSchema.RelationTypeEnum> p ) {
 				ICFBamRelationObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFBamSchema.RelationTypeEnum value = obj.getRequiredRelationType();
-					ReadOnlyObjectWrapper<ICFBamSchema.RelationTypeEnum> observable = new ReadOnlyObjectWrapper<ICFBamSchema.RelationTypeEnum>();
+					ICFBamPubSchema.RelationTypeEnum value = obj.getRequiredRelationType();
+					ReadOnlyObjectWrapper<ICFBamPubSchema.RelationTypeEnum> observable = new ReadOnlyObjectWrapper<ICFBamPubSchema.RelationTypeEnum>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnRelationType.setCellFactory( new Callback<TableColumn<ICFBamRelationObj,ICFBamSchema.RelationTypeEnum>,TableCell<ICFBamRelationObj,ICFBamSchema.RelationTypeEnum>>() {
-			@Override public TableCell<ICFBamRelationObj,ICFBamSchema.RelationTypeEnum> call(
-				TableColumn<ICFBamRelationObj,ICFBamSchema.RelationTypeEnum> arg)
+		tableColumnRelationType.setCellFactory( new Callback<TableColumn<ICFBamRelationObj,ICFBamPubSchema.RelationTypeEnum>,TableCell<ICFBamRelationObj,ICFBamPubSchema.RelationTypeEnum>>() {
+			@Override public TableCell<ICFBamRelationObj,ICFBamPubSchema.RelationTypeEnum> call(
+				TableColumn<ICFBamRelationObj,ICFBamPubSchema.RelationTypeEnum> arg)
 			{
 				return new CFEnumTableCell<ICFBamRelationObj,ICFBamSchema.RelationTypeEnum>();
 			}
@@ -459,24 +459,24 @@ implements ICFBamJavaFXRelationPaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnAllowAddendum );
-		tableColumnCodeVis = new TableColumn<ICFBamRelationObj,ICFBamSchema.CodeVisibilityEnum>( "Relationship Code Visibility" );
-		tableColumnCodeVis.setCellValueFactory( new Callback<CellDataFeatures<ICFBamRelationObj,ICFBamSchema.CodeVisibilityEnum>,ObservableValue<ICFBamSchema.CodeVisibilityEnum> >() {
-			public ObservableValue<ICFBamSchema.CodeVisibilityEnum> call( CellDataFeatures<ICFBamRelationObj, ICFBamSchema.CodeVisibilityEnum> p ) {
+		tableColumnCodeVis = new TableColumn<ICFBamRelationObj,ICFBamPubSchema.CodeVisibilityEnum>( "Relationship Code Visibility" );
+		tableColumnCodeVis.setCellValueFactory( new Callback<CellDataFeatures<ICFBamRelationObj,ICFBamPubSchema.CodeVisibilityEnum>,ObservableValue<ICFBamPubSchema.CodeVisibilityEnum> >() {
+			public ObservableValue<ICFBamPubSchema.CodeVisibilityEnum> call( CellDataFeatures<ICFBamRelationObj, ICFBamPubSchema.CodeVisibilityEnum> p ) {
 				ICFBamRelationObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					ICFBamSchema.CodeVisibilityEnum value = obj.getRequiredCodeVis();
-					ReadOnlyObjectWrapper<ICFBamSchema.CodeVisibilityEnum> observable = new ReadOnlyObjectWrapper<ICFBamSchema.CodeVisibilityEnum>();
+					ICFBamPubSchema.CodeVisibilityEnum value = obj.getRequiredCodeVis();
+					ReadOnlyObjectWrapper<ICFBamPubSchema.CodeVisibilityEnum> observable = new ReadOnlyObjectWrapper<ICFBamPubSchema.CodeVisibilityEnum>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnCodeVis.setCellFactory( new Callback<TableColumn<ICFBamRelationObj,ICFBamSchema.CodeVisibilityEnum>,TableCell<ICFBamRelationObj,ICFBamSchema.CodeVisibilityEnum>>() {
-			@Override public TableCell<ICFBamRelationObj,ICFBamSchema.CodeVisibilityEnum> call(
-				TableColumn<ICFBamRelationObj,ICFBamSchema.CodeVisibilityEnum> arg)
+		tableColumnCodeVis.setCellFactory( new Callback<TableColumn<ICFBamRelationObj,ICFBamPubSchema.CodeVisibilityEnum>,TableCell<ICFBamRelationObj,ICFBamPubSchema.CodeVisibilityEnum>>() {
+			@Override public TableCell<ICFBamRelationObj,ICFBamPubSchema.CodeVisibilityEnum> call(
+				TableColumn<ICFBamRelationObj,ICFBamPubSchema.CodeVisibilityEnum> arg)
 			{
 				return new CFEnumTableCell<ICFBamRelationObj,ICFBamSchema.CodeVisibilityEnum>();
 			}
