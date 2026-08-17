@@ -104,7 +104,7 @@ implements ICFBamJavaFXClearDepPaneList
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamClearDepObj> dataTable = null;
 	protected TableColumn<ICFBamClearDepObj,String> tableColumnObjKind = null;
-	protected TableColumn<ICFBamClearDepObj, CFLibDbKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamClearDepObj, $implJavaOptAtomType$> tableColumnId = null;
 	protected TableColumn<ICFBamClearDepObj, ICFBamRelationObj> tableColumnLookupRelation = null;
 	protected TableColumn<ICFBamClearDepObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 
@@ -218,24 +218,24 @@ implements ICFBamJavaFXClearDepPaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnObjKind );
-		tableColumnId = new TableColumn<ICFBamClearDepObj,CFLibDbKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamClearDepObj,CFLibDbKeyHash256>,ObservableValue<CFLibDbKeyHash256> >() {
-			public ObservableValue<CFLibDbKeyHash256> call( CellDataFeatures<ICFBamClearDepObj, CFLibDbKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamClearDepObj,$implJavaOptAtomType$>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamClearDepObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamClearDepObj, $implJavaOptAtomType$> p ) {
 				ICFBamScopeObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					CFLibDbKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<CFLibDbKeyHash256> observable = new ReadOnlyObjectWrapper<CFLibDbKeyHash256>();
+					$implJavaAtomType$ value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamClearDepObj,CFLibDbKeyHash256>,TableCell<ICFBamClearDepObj,CFLibDbKeyHash256>>() {
-			@Override public TableCell<ICFBamClearDepObj,CFLibDbKeyHash256> call(
-				TableColumn<ICFBamClearDepObj,CFLibDbKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamClearDepObj,$implJavaOptAtomType$>,TableCell<ICFBamClearDepObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamClearDepObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamClearDepObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamClearDepObj>();
 			}

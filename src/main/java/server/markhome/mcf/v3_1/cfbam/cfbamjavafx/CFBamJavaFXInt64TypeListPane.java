@@ -102,20 +102,20 @@ implements ICFBamJavaFXInt64TypePaneList
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamInt64TypeObj> dataTable = null;
 	protected TableColumn<ICFBamInt64TypeObj,String> tableColumnObjKind = null;
-	protected TableColumn<ICFBamInt64TypeObj, CFLibDbKeyHash256> tableColumnId = null;
-	protected TableColumn<ICFBamInt64TypeObj, String> tableColumnName = null;
-	protected TableColumn<ICFBamInt64TypeObj, String> tableColumnShortName = null;
-	protected TableColumn<ICFBamInt64TypeObj, String> tableColumnLabel = null;
-	protected TableColumn<ICFBamInt64TypeObj, String> tableColumnShortDescription = null;
-	protected TableColumn<ICFBamInt64TypeObj, String> tableColumnDescription = null;
-	protected TableColumn<ICFBamInt64TypeObj, String> tableColumnDefaultXmlValue = null;
-	protected TableColumn<ICFBamInt64TypeObj, Boolean> tableColumnIsNullable = null;
-	protected TableColumn<ICFBamInt64TypeObj, Boolean> tableColumnGenerateId = null;
-	protected TableColumn<ICFBamInt64TypeObj, Boolean> tableColumnImplementsPolymorph = null;
-	protected TableColumn<ICFBamInt64TypeObj, String> tableColumnDbName = null;
-	protected TableColumn<ICFBamInt64TypeObj, Long> tableColumnInitValue = null;
-	protected TableColumn<ICFBamInt64TypeObj, Long> tableColumnMinValue = null;
-	protected TableColumn<ICFBamInt64TypeObj, Long> tableColumnMaxValue = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnId = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnName = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnShortName = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnLabel = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnShortDescription = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnDescription = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnDefaultXmlValue = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnIsNullable = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnGenerateId = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnImplementsPolymorph = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnDbName = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnInitValue = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnMinValue = null;
+	protected TableColumn<ICFBamInt64TypeObj, $implJavaOptAtomType$> tableColumnMaxValue = null;
 	protected TableColumn<ICFBamInt64TypeObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 
 	public final String S_ColumnNames[] = { "Name" };
@@ -228,325 +228,325 @@ implements ICFBamJavaFXInt64TypePaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnObjKind );
-		tableColumnId = new TableColumn<ICFBamInt64TypeObj,CFLibDbKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,CFLibDbKeyHash256>,ObservableValue<CFLibDbKeyHash256> >() {
-			public ObservableValue<CFLibDbKeyHash256> call( CellDataFeatures<ICFBamInt64TypeObj, CFLibDbKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					CFLibDbKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<CFLibDbKeyHash256> observable = new ReadOnlyObjectWrapper<CFLibDbKeyHash256>();
+					$implJavaAtomType$ value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,CFLibDbKeyHash256>,TableCell<ICFBamInt64TypeObj,CFLibDbKeyHash256>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,CFLibDbKeyHash256> call(
-				TableColumn<ICFBamInt64TypeObj,CFLibDbKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnId );
-		tableColumnName = new TableColumn<ICFBamInt64TypeObj,String>( "Name" );
-		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,String>,ObservableValue<String> >() {
-			public ObservableValue<String> call( CellDataFeatures<ICFBamInt64TypeObj, String> p ) {
+		tableColumnName = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Name" );
+		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					String value = obj.getRequiredName();
-					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
+					$implJavaAtomType$ value = obj.getRequiredName();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,String>,TableCell<ICFBamInt64TypeObj,String>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,String> call(
-				TableColumn<ICFBamInt64TypeObj,String> arg)
+		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFStringTableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnName );
-		tableColumnShortName = new TableColumn<ICFBamInt64TypeObj,String>( "Short Name" );
-		tableColumnShortName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,String>,ObservableValue<String> >() {
-			public ObservableValue<String> call( CellDataFeatures<ICFBamInt64TypeObj, String> p ) {
+		tableColumnShortName = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Short Name" );
+		tableColumnShortName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					String value = obj.getOptionalShortName();
-					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
+					$implJavaAtomType$ value = obj.getOptionalShortName();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnShortName.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,String>,TableCell<ICFBamInt64TypeObj,String>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,String> call(
-				TableColumn<ICFBamInt64TypeObj,String> arg)
+		tableColumnShortName.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFStringTableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnShortName );
-		tableColumnLabel = new TableColumn<ICFBamInt64TypeObj,String>( "Label" );
-		tableColumnLabel.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,String>,ObservableValue<String> >() {
-			public ObservableValue<String> call( CellDataFeatures<ICFBamInt64TypeObj, String> p ) {
+		tableColumnLabel = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Label" );
+		tableColumnLabel.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					String value = obj.getOptionalLabel();
-					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
+					$implJavaAtomType$ value = obj.getOptionalLabel();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnLabel.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,String>,TableCell<ICFBamInt64TypeObj,String>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,String> call(
-				TableColumn<ICFBamInt64TypeObj,String> arg)
+		tableColumnLabel.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFStringTableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnLabel );
-		tableColumnShortDescription = new TableColumn<ICFBamInt64TypeObj,String>( "Short Description" );
-		tableColumnShortDescription.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,String>,ObservableValue<String> >() {
-			public ObservableValue<String> call( CellDataFeatures<ICFBamInt64TypeObj, String> p ) {
+		tableColumnShortDescription = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Short Description" );
+		tableColumnShortDescription.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					String value = obj.getOptionalShortDescription();
-					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
+					$implJavaAtomType$ value = obj.getOptionalShortDescription();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnShortDescription.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,String>,TableCell<ICFBamInt64TypeObj,String>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,String> call(
-				TableColumn<ICFBamInt64TypeObj,String> arg)
+		tableColumnShortDescription.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFStringTableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnShortDescription );
-		tableColumnDescription = new TableColumn<ICFBamInt64TypeObj,String>( "Description" );
-		tableColumnDescription.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,String>,ObservableValue<String> >() {
-			public ObservableValue<String> call( CellDataFeatures<ICFBamInt64TypeObj, String> p ) {
+		tableColumnDescription = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Description" );
+		tableColumnDescription.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					String value = obj.getOptionalDescription();
-					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
+					$implJavaAtomType$ value = obj.getOptionalDescription();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnDescription.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,String>,TableCell<ICFBamInt64TypeObj,String>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,String> call(
-				TableColumn<ICFBamInt64TypeObj,String> arg)
+		tableColumnDescription.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFStringTableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnDescription );
-		tableColumnDefaultXmlValue = new TableColumn<ICFBamInt64TypeObj,String>( "DefaultXmlValue" );
-		tableColumnDefaultXmlValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,String>,ObservableValue<String> >() {
-			public ObservableValue<String> call( CellDataFeatures<ICFBamInt64TypeObj, String> p ) {
+		tableColumnDefaultXmlValue = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "DefaultXmlValue" );
+		tableColumnDefaultXmlValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					String value = obj.getOptionalDefaultXmlValue();
-					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
+					$implJavaAtomType$ value = obj.getOptionalDefaultXmlValue();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnDefaultXmlValue.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,String>,TableCell<ICFBamInt64TypeObj,String>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,String> call(
-				TableColumn<ICFBamInt64TypeObj,String> arg)
+		tableColumnDefaultXmlValue.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFStringTableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnDefaultXmlValue );
-		tableColumnIsNullable = new TableColumn<ICFBamInt64TypeObj,Boolean>( "Is Nullable" );
-		tableColumnIsNullable.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,Boolean>,ObservableValue<Boolean> >() {
-			public ObservableValue<Boolean> call( CellDataFeatures<ICFBamInt64TypeObj, Boolean> p ) {
+		tableColumnIsNullable = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Is Nullable" );
+		tableColumnIsNullable.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					boolean value = obj.getRequiredIsNullable();
-					Boolean wrapped = Boolean.valueOf( value );
-					ReadOnlyObjectWrapper<Boolean> observable = new ReadOnlyObjectWrapper<Boolean>();
+					$implJavaAtomType$ value = obj.getRequiredIsNullable();
+					$implJavaOptAtomType$ wrapped = $implJavaOptAtomType$.valueOf( value );
+					ReadOnlyObjectWrapper<$implJavaOptAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaOptAtomType$>();
 					observable.setValue( wrapped );
 					return( observable );
 				}
 			}
 		});
-		tableColumnIsNullable.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,Boolean>,TableCell<ICFBamInt64TypeObj,Boolean>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,Boolean> call(
-				TableColumn<ICFBamInt64TypeObj,Boolean> arg)
+		tableColumnIsNullable.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFBoolTableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnIsNullable );
-		tableColumnGenerateId = new TableColumn<ICFBamInt64TypeObj,Boolean>( "Generate Id" );
-		tableColumnGenerateId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,Boolean>,ObservableValue<Boolean> >() {
-			public ObservableValue<Boolean> call( CellDataFeatures<ICFBamInt64TypeObj, Boolean> p ) {
+		tableColumnGenerateId = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Generate Id" );
+		tableColumnGenerateId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					Boolean value = obj.getOptionalGenerateId();
-					ReadOnlyObjectWrapper<Boolean> observable = new ReadOnlyObjectWrapper<Boolean>();
+					$implJavaAtomType$ value = obj.getOptionalGenerateId();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnGenerateId.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,Boolean>,TableCell<ICFBamInt64TypeObj,Boolean>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,Boolean> call(
-				TableColumn<ICFBamInt64TypeObj,Boolean> arg)
+		tableColumnGenerateId.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFBoolTableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnGenerateId );
-		tableColumnImplementsPolymorph = new TableColumn<ICFBamInt64TypeObj,Boolean>( "ImplementsPolymorph" );
-		tableColumnImplementsPolymorph.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,Boolean>,ObservableValue<Boolean> >() {
-			public ObservableValue<Boolean> call( CellDataFeatures<ICFBamInt64TypeObj, Boolean> p ) {
+		tableColumnImplementsPolymorph = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "ImplementsPolymorph" );
+		tableColumnImplementsPolymorph.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					boolean value = obj.getRequiredImplementsPolymorph();
-					Boolean wrapped = Boolean.valueOf( value );
-					ReadOnlyObjectWrapper<Boolean> observable = new ReadOnlyObjectWrapper<Boolean>();
+					$implJavaAtomType$ value = obj.getRequiredImplementsPolymorph();
+					$implJavaOptAtomType$ wrapped = $implJavaOptAtomType$.valueOf( value );
+					ReadOnlyObjectWrapper<$implJavaOptAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaOptAtomType$>();
 					observable.setValue( wrapped );
 					return( observable );
 				}
 			}
 		});
-		tableColumnImplementsPolymorph.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,Boolean>,TableCell<ICFBamInt64TypeObj,Boolean>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,Boolean> call(
-				TableColumn<ICFBamInt64TypeObj,Boolean> arg)
+		tableColumnImplementsPolymorph.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFBoolTableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnImplementsPolymorph );
-		tableColumnDbName = new TableColumn<ICFBamInt64TypeObj,String>( "Db Name" );
-		tableColumnDbName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,String>,ObservableValue<String> >() {
-			public ObservableValue<String> call( CellDataFeatures<ICFBamInt64TypeObj, String> p ) {
+		tableColumnDbName = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Db Name" );
+		tableColumnDbName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamAtomObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					String value = obj.getOptionalDbName();
-					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
+					$implJavaAtomType$ value = obj.getOptionalDbName();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnDbName.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,String>,TableCell<ICFBamInt64TypeObj,String>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,String> call(
-				TableColumn<ICFBamInt64TypeObj,String> arg)
+		tableColumnDbName.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFStringTableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnDbName );
-		tableColumnInitValue = new TableColumn<ICFBamInt64TypeObj,Long>( "Init. Value" );
-		tableColumnInitValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,Long>,ObservableValue<Long> >() {
-			public ObservableValue<Long> call( CellDataFeatures<ICFBamInt64TypeObj, Long> p ) {
+		tableColumnInitValue = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Init. Value" );
+		tableColumnInitValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamInt64DefObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					Long value = obj.getOptionalInitValue();
-					ReadOnlyObjectWrapper<Long> observable = new ReadOnlyObjectWrapper<Long>();
+					$implJavaAtomType$ value = obj.getOptionalInitValue();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnInitValue.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,Long>,TableCell<ICFBamInt64TypeObj,Long>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,Long> call(
-				TableColumn<ICFBamInt64TypeObj,Long> arg)
+		tableColumnInitValue.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFInt64TableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnInitValue );
-		tableColumnMinValue = new TableColumn<ICFBamInt64TypeObj,Long>( "Min. Value" );
-		tableColumnMinValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,Long>,ObservableValue<Long> >() {
-			public ObservableValue<Long> call( CellDataFeatures<ICFBamInt64TypeObj, Long> p ) {
+		tableColumnMinValue = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Min. Value" );
+		tableColumnMinValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamInt64DefObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					Long value = obj.getOptionalMinValue();
-					ReadOnlyObjectWrapper<Long> observable = new ReadOnlyObjectWrapper<Long>();
+					$implJavaAtomType$ value = obj.getOptionalMinValue();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnMinValue.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,Long>,TableCell<ICFBamInt64TypeObj,Long>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,Long> call(
-				TableColumn<ICFBamInt64TypeObj,Long> arg)
+		tableColumnMinValue.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFInt64TableCell<ICFBamInt64TypeObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnMinValue );
-		tableColumnMaxValue = new TableColumn<ICFBamInt64TypeObj,Long>( "Max. Value" );
-		tableColumnMaxValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,Long>,ObservableValue<Long> >() {
-			public ObservableValue<Long> call( CellDataFeatures<ICFBamInt64TypeObj, Long> p ) {
+		tableColumnMaxValue = new TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>( "Max. Value" );
+		tableColumnMaxValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamInt64TypeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamInt64TypeObj, $implJavaOptAtomType$> p ) {
 				ICFBamInt64DefObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					Long value = obj.getOptionalMaxValue();
-					ReadOnlyObjectWrapper<Long> observable = new ReadOnlyObjectWrapper<Long>();
+					$implJavaAtomType$ value = obj.getOptionalMaxValue();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnMaxValue.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,Long>,TableCell<ICFBamInt64TypeObj,Long>>() {
-			@Override public TableCell<ICFBamInt64TypeObj,Long> call(
-				TableColumn<ICFBamInt64TypeObj,Long> arg)
+		tableColumnMaxValue.setCellFactory( new Callback<TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$>,TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamInt64TypeObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamInt64TypeObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFInt64TableCell<ICFBamInt64TypeObj>();
 			}

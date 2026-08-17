@@ -98,8 +98,8 @@ implements ICFBamJavaFXDelTopDepPaneList
 	protected CFButton buttonEditSelected = null;
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamDelTopDepObj> dataTable = null;
-	protected TableColumn<ICFBamDelTopDepObj, CFLibDbKeyHash256> tableColumnId = null;
-	protected TableColumn<ICFBamDelTopDepObj, String> tableColumnName = null;
+	protected TableColumn<ICFBamDelTopDepObj, $implJavaOptAtomType$> tableColumnId = null;
+	protected TableColumn<ICFBamDelTopDepObj, $implJavaOptAtomType$> tableColumnName = null;
 	protected TableColumn<ICFBamDelTopDepObj, ICFBamRelationObj> tableColumnLookupRelation = null;
 	protected TableColumn<ICFBamDelTopDepObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 
@@ -190,47 +190,47 @@ implements ICFBamJavaFXDelTopDepPaneList
 		javafxSortByChain = sortByChain;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamDelTopDepObj>();
-		tableColumnId = new TableColumn<ICFBamDelTopDepObj,CFLibDbKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDelTopDepObj,CFLibDbKeyHash256>,ObservableValue<CFLibDbKeyHash256> >() {
-			public ObservableValue<CFLibDbKeyHash256> call( CellDataFeatures<ICFBamDelTopDepObj, CFLibDbKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamDelTopDepObj,$implJavaOptAtomType$>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDelTopDepObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDelTopDepObj, $implJavaOptAtomType$> p ) {
 				ICFBamScopeObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					CFLibDbKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<CFLibDbKeyHash256> observable = new ReadOnlyObjectWrapper<CFLibDbKeyHash256>();
+					$implJavaAtomType$ value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamDelTopDepObj,CFLibDbKeyHash256>,TableCell<ICFBamDelTopDepObj,CFLibDbKeyHash256>>() {
-			@Override public TableCell<ICFBamDelTopDepObj,CFLibDbKeyHash256> call(
-				TableColumn<ICFBamDelTopDepObj,CFLibDbKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamDelTopDepObj,$implJavaOptAtomType$>,TableCell<ICFBamDelTopDepObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamDelTopDepObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamDelTopDepObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamDelTopDepObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnId );
-		tableColumnName = new TableColumn<ICFBamDelTopDepObj,String>( "Name" );
-		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDelTopDepObj,String>,ObservableValue<String> >() {
-			public ObservableValue<String> call( CellDataFeatures<ICFBamDelTopDepObj, String> p ) {
+		tableColumnName = new TableColumn<ICFBamDelTopDepObj,$implJavaOptAtomType$>( "Name" );
+		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDelTopDepObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDelTopDepObj, $implJavaOptAtomType$> p ) {
 				ICFBamDelTopDepObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					String value = obj.getRequiredName();
-					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
+					$implJavaAtomType$ value = obj.getRequiredName();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamDelTopDepObj,String>,TableCell<ICFBamDelTopDepObj,String>>() {
-			@Override public TableCell<ICFBamDelTopDepObj,String> call(
-				TableColumn<ICFBamDelTopDepObj,String> arg)
+		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamDelTopDepObj,$implJavaOptAtomType$>,TableCell<ICFBamDelTopDepObj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamDelTopDepObj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamDelTopDepObj,$implJavaOptAtomType$> arg)
 			{
 				return new CFStringTableCell<ICFBamDelTopDepObj>();
 			}

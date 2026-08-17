@@ -96,8 +96,8 @@ implements ICFBamJavaFXPopSubDep2PaneList
 	protected CFButton buttonEditSelected = null;
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamPopSubDep2Obj> dataTable = null;
-	protected TableColumn<ICFBamPopSubDep2Obj, CFLibDbKeyHash256> tableColumnId = null;
-	protected TableColumn<ICFBamPopSubDep2Obj, String> tableColumnName = null;
+	protected TableColumn<ICFBamPopSubDep2Obj, $implJavaOptAtomType$> tableColumnId = null;
+	protected TableColumn<ICFBamPopSubDep2Obj, $implJavaOptAtomType$> tableColumnName = null;
 	protected TableColumn<ICFBamPopSubDep2Obj, ICFBamRelationObj> tableColumnLookupRelation = null;
 	protected TableColumn<ICFBamPopSubDep2Obj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 
@@ -188,47 +188,47 @@ implements ICFBamJavaFXPopSubDep2PaneList
 		javafxSortByChain = sortByChain;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamPopSubDep2Obj>();
-		tableColumnId = new TableColumn<ICFBamPopSubDep2Obj,CFLibDbKeyHash256>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamPopSubDep2Obj,CFLibDbKeyHash256>,ObservableValue<CFLibDbKeyHash256> >() {
-			public ObservableValue<CFLibDbKeyHash256> call( CellDataFeatures<ICFBamPopSubDep2Obj, CFLibDbKeyHash256> p ) {
+		tableColumnId = new TableColumn<ICFBamPopSubDep2Obj,$implJavaOptAtomType$>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamPopSubDep2Obj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamPopSubDep2Obj, $implJavaOptAtomType$> p ) {
 				ICFBamScopeObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					CFLibDbKeyHash256 value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<CFLibDbKeyHash256> observable = new ReadOnlyObjectWrapper<CFLibDbKeyHash256>();
+					$implJavaAtomType$ value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamPopSubDep2Obj,CFLibDbKeyHash256>,TableCell<ICFBamPopSubDep2Obj,CFLibDbKeyHash256>>() {
-			@Override public TableCell<ICFBamPopSubDep2Obj,CFLibDbKeyHash256> call(
-				TableColumn<ICFBamPopSubDep2Obj,CFLibDbKeyHash256> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamPopSubDep2Obj,$implJavaOptAtomType$>,TableCell<ICFBamPopSubDep2Obj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamPopSubDep2Obj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamPopSubDep2Obj,$implJavaOptAtomType$> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamPopSubDep2Obj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnId );
-		tableColumnName = new TableColumn<ICFBamPopSubDep2Obj,String>( "Name" );
-		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamPopSubDep2Obj,String>,ObservableValue<String> >() {
-			public ObservableValue<String> call( CellDataFeatures<ICFBamPopSubDep2Obj, String> p ) {
+		tableColumnName = new TableColumn<ICFBamPopSubDep2Obj,$implJavaOptAtomType$>( "Name" );
+		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamPopSubDep2Obj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
+			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamPopSubDep2Obj, $implJavaOptAtomType$> p ) {
 				ICFBamPopSubDep2Obj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					String value = obj.getRequiredName();
-					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
+					$implJavaAtomType$ value = obj.getRequiredName();
+					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamPopSubDep2Obj,String>,TableCell<ICFBamPopSubDep2Obj,String>>() {
-			@Override public TableCell<ICFBamPopSubDep2Obj,String> call(
-				TableColumn<ICFBamPopSubDep2Obj,String> arg)
+		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamPopSubDep2Obj,$implJavaOptAtomType$>,TableCell<ICFBamPopSubDep2Obj,$implJavaOptAtomType$>>() {
+			@Override public TableCell<ICFBamPopSubDep2Obj,$implJavaOptAtomType$> call(
+				TableColumn<ICFBamPopSubDep2Obj,$implJavaOptAtomType$> arg)
 			{
 				return new CFStringTableCell<ICFBamPopSubDep2Obj>();
 			}
