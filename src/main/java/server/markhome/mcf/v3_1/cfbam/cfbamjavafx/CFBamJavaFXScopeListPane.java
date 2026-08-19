@@ -121,7 +121,7 @@ implements ICFBamJavaFXScopePaneList
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamScopeObj> dataTable = null;
 	protected TableColumn<ICFBamScopeObj,String> tableColumnObjKind = null;
-	protected TableColumn<ICFBamScopeObj, $implJavaOptAtomType$> tableColumnId = null;
+	protected TableColumn<ICFBamScopeObj, ICFLibKeyHash256> tableColumnId = null;
 
 	public final String S_ColumnNames[] = { "Name" };
 	protected ICFFormManager cfFormManager = null;
@@ -233,24 +233,24 @@ implements ICFBamJavaFXScopePaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnObjKind );
-		tableColumnId = new TableColumn<ICFBamScopeObj,$implJavaOptAtomType$>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamScopeObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamScopeObj, $implJavaOptAtomType$> p ) {
+		tableColumnId = new TableColumn<ICFBamScopeObj,ICFLibKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamScopeObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
+			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamScopeObj, ICFLibKeyHash256> p ) {
 				ICFBamScopeObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					ICFLibKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamScopeObj,$implJavaOptAtomType$>,TableCell<ICFBamScopeObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamScopeObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamScopeObj,$implJavaOptAtomType$> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamScopeObj,ICFLibKeyHash256>,TableCell<ICFBamScopeObj,ICFLibKeyHash256>>() {
+			@Override public TableCell<ICFBamScopeObj,ICFLibKeyHash256> call(
+				TableColumn<ICFBamScopeObj,ICFLibKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamScopeObj>();
 			}

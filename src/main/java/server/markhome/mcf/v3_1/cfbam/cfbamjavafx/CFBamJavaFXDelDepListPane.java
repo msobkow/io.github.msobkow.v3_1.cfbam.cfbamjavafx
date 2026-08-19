@@ -104,7 +104,7 @@ implements ICFBamJavaFXDelDepPaneList
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamDelDepObj> dataTable = null;
 	protected TableColumn<ICFBamDelDepObj,String> tableColumnObjKind = null;
-	protected TableColumn<ICFBamDelDepObj, $implJavaOptAtomType$> tableColumnId = null;
+	protected TableColumn<ICFBamDelDepObj, ICFLibKeyHash256> tableColumnId = null;
 	protected TableColumn<ICFBamDelDepObj, ICFBamRelationObj> tableColumnLookupRelation = null;
 	protected TableColumn<ICFBamDelDepObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 
@@ -218,24 +218,24 @@ implements ICFBamJavaFXDelDepPaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnObjKind );
-		tableColumnId = new TableColumn<ICFBamDelDepObj,$implJavaOptAtomType$>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDelDepObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDelDepObj, $implJavaOptAtomType$> p ) {
+		tableColumnId = new TableColumn<ICFBamDelDepObj,ICFLibKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDelDepObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
+			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamDelDepObj, ICFLibKeyHash256> p ) {
 				ICFBamScopeObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					ICFLibKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamDelDepObj,$implJavaOptAtomType$>,TableCell<ICFBamDelDepObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDelDepObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDelDepObj,$implJavaOptAtomType$> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamDelDepObj,ICFLibKeyHash256>,TableCell<ICFBamDelDepObj,ICFLibKeyHash256>>() {
+			@Override public TableCell<ICFBamDelDepObj,ICFLibKeyHash256> call(
+				TableColumn<ICFBamDelDepObj,ICFLibKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamDelDepObj>();
 			}

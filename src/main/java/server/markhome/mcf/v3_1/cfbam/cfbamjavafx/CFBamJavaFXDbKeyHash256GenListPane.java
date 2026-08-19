@@ -96,20 +96,20 @@ implements ICFBamJavaFXDbKeyHash256GenPaneList
 	protected CFButton buttonEditSelected = null;
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamDbKeyHash256GenObj> dataTable = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnId = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnName = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnShortName = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnLabel = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnShortDescription = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnDescription = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnDefaultXmlValue = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnIsNullable = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnGenerateId = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnImplementsPolymorph = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnDbName = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnInitValue = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnSlice = null;
-	protected TableColumn<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> tableColumnBlockSize = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, String> tableColumnName = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, String> tableColumnShortName = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, String> tableColumnLabel = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, String> tableColumnShortDescription = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, String> tableColumnDescription = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, String> tableColumnDefaultXmlValue = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, Boolean> tableColumnIsNullable = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, Boolean> tableColumnGenerateId = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, Boolean> tableColumnImplementsPolymorph = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, String> tableColumnDbName = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, String> tableColumnInitValue = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, Short> tableColumnSlice = null;
+	protected TableColumn<ICFBamDbKeyHash256GenObj, Integer> tableColumnBlockSize = null;
 	protected TableColumn<ICFBamDbKeyHash256GenObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 
 	public final String S_ColumnNames[] = { "Name" };
@@ -199,327 +199,327 @@ implements ICFBamJavaFXDbKeyHash256GenPaneList
 		javafxSortByChain = sortByChain;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamDbKeyHash256GenObj>();
-		tableColumnId = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnId = new TableColumn<ICFBamDbKeyHash256GenObj,ICFLibKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
+			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, ICFLibKeyHash256> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					ICFLibKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,ICFLibKeyHash256>,TableCell<ICFBamDbKeyHash256GenObj,ICFLibKeyHash256>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,ICFLibKeyHash256> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,ICFLibKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnId );
-		tableColumnName = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Name" );
-		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnName = new TableColumn<ICFBamDbKeyHash256GenObj,String>( "Name" );
+		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, String> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredName();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getRequiredName();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,String>,TableCell<ICFBamDbKeyHash256GenObj,String>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,String> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnName );
-		tableColumnShortName = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Short Name" );
-		tableColumnShortName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnShortName = new TableColumn<ICFBamDbKeyHash256GenObj,String>( "Short Name" );
+		tableColumnShortName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, String> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getOptionalShortName();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getOptionalShortName();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnShortName.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnShortName.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,String>,TableCell<ICFBamDbKeyHash256GenObj,String>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,String> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnShortName );
-		tableColumnLabel = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Label" );
-		tableColumnLabel.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnLabel = new TableColumn<ICFBamDbKeyHash256GenObj,String>( "Label" );
+		tableColumnLabel.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, String> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getOptionalLabel();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getOptionalLabel();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnLabel.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnLabel.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,String>,TableCell<ICFBamDbKeyHash256GenObj,String>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,String> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnLabel );
-		tableColumnShortDescription = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Short Description" );
-		tableColumnShortDescription.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnShortDescription = new TableColumn<ICFBamDbKeyHash256GenObj,String>( "Short Description" );
+		tableColumnShortDescription.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, String> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getOptionalShortDescription();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getOptionalShortDescription();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnShortDescription.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnShortDescription.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,String>,TableCell<ICFBamDbKeyHash256GenObj,String>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,String> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnShortDescription );
-		tableColumnDescription = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Description" );
-		tableColumnDescription.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnDescription = new TableColumn<ICFBamDbKeyHash256GenObj,String>( "Description" );
+		tableColumnDescription.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, String> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getOptionalDescription();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getOptionalDescription();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnDescription.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnDescription.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,String>,TableCell<ICFBamDbKeyHash256GenObj,String>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,String> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnDescription );
-		tableColumnDefaultXmlValue = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "DefaultXmlValue" );
-		tableColumnDefaultXmlValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnDefaultXmlValue = new TableColumn<ICFBamDbKeyHash256GenObj,String>( "DefaultXmlValue" );
+		tableColumnDefaultXmlValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, String> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getOptionalDefaultXmlValue();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getOptionalDefaultXmlValue();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnDefaultXmlValue.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnDefaultXmlValue.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,String>,TableCell<ICFBamDbKeyHash256GenObj,String>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,String> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnDefaultXmlValue );
-		tableColumnIsNullable = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Is Nullable" );
-		tableColumnIsNullable.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnIsNullable = new TableColumn<ICFBamDbKeyHash256GenObj,Boolean>( "Is Nullable" );
+		tableColumnIsNullable.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,Boolean>,ObservableValue<Boolean> >() {
+			public ObservableValue<Boolean> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, Boolean> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredIsNullable();
-					$implJavaOptAtomType$ wrapped = $implJavaOptAtomType$.valueOf( value );
-					ReadOnlyObjectWrapper<$implJavaOptAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaOptAtomType$>();
+					boolean value = obj.getRequiredIsNullable();
+					Boolean wrapped = Boolean.valueOf( value );
+					ReadOnlyObjectWrapper<Boolean> observable = new ReadOnlyObjectWrapper<Boolean>();
 					observable.setValue( wrapped );
 					return( observable );
 				}
 			}
 		});
-		tableColumnIsNullable.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnIsNullable.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,Boolean>,TableCell<ICFBamDbKeyHash256GenObj,Boolean>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,Boolean> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,Boolean> arg)
 			{
 				return new CFBoolTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnIsNullable );
-		tableColumnGenerateId = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Generate Id" );
-		tableColumnGenerateId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnGenerateId = new TableColumn<ICFBamDbKeyHash256GenObj,Boolean>( "Generate Id" );
+		tableColumnGenerateId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,Boolean>,ObservableValue<Boolean> >() {
+			public ObservableValue<Boolean> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, Boolean> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getOptionalGenerateId();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					Boolean value = obj.getOptionalGenerateId();
+					ReadOnlyObjectWrapper<Boolean> observable = new ReadOnlyObjectWrapper<Boolean>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnGenerateId.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnGenerateId.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,Boolean>,TableCell<ICFBamDbKeyHash256GenObj,Boolean>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,Boolean> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,Boolean> arg)
 			{
 				return new CFBoolTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnGenerateId );
-		tableColumnImplementsPolymorph = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "ImplementsPolymorph" );
-		tableColumnImplementsPolymorph.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnImplementsPolymorph = new TableColumn<ICFBamDbKeyHash256GenObj,Boolean>( "ImplementsPolymorph" );
+		tableColumnImplementsPolymorph.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,Boolean>,ObservableValue<Boolean> >() {
+			public ObservableValue<Boolean> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, Boolean> p ) {
 				ICFBamValueObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredImplementsPolymorph();
-					$implJavaOptAtomType$ wrapped = $implJavaOptAtomType$.valueOf( value );
-					ReadOnlyObjectWrapper<$implJavaOptAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaOptAtomType$>();
+					boolean value = obj.getRequiredImplementsPolymorph();
+					Boolean wrapped = Boolean.valueOf( value );
+					ReadOnlyObjectWrapper<Boolean> observable = new ReadOnlyObjectWrapper<Boolean>();
 					observable.setValue( wrapped );
 					return( observable );
 				}
 			}
 		});
-		tableColumnImplementsPolymorph.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnImplementsPolymorph.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,Boolean>,TableCell<ICFBamDbKeyHash256GenObj,Boolean>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,Boolean> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,Boolean> arg)
 			{
 				return new CFBoolTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnImplementsPolymorph );
-		tableColumnDbName = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Db Name" );
-		tableColumnDbName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnDbName = new TableColumn<ICFBamDbKeyHash256GenObj,String>( "Db Name" );
+		tableColumnDbName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, String> p ) {
 				ICFBamAtomObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getOptionalDbName();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getOptionalDbName();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnDbName.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnDbName.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,String>,TableCell<ICFBamDbKeyHash256GenObj,String>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,String> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnDbName );
-		tableColumnInitValue = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Init. Value" );
-		tableColumnInitValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnInitValue = new TableColumn<ICFBamDbKeyHash256GenObj,String>( "Init. Value" );
+		tableColumnInitValue.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, String> p ) {
 				ICFBamDbKeyHash256DefObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getOptionalInitValue();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getOptionalInitValue();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnInitValue.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnInitValue.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,String>,TableCell<ICFBamDbKeyHash256GenObj,String>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,String> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnInitValue );
-		tableColumnSlice = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "Slice" );
-		tableColumnSlice.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnSlice = new TableColumn<ICFBamDbKeyHash256GenObj,Short>( "Slice" );
+		tableColumnSlice.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,Short>,ObservableValue<Short> >() {
+			public ObservableValue<Short> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, Short> p ) {
 				ICFBamDbKeyHash256GenObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredSlice();
-					$implJavaOptAtomType$ wrapped = $implJavaOptAtomType$.valueOf( value );
-					ReadOnlyObjectWrapper<$implJavaOptAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaOptAtomType$>();
+					short value = obj.getRequiredSlice();
+					Short wrapped = Short.valueOf( value );
+					ReadOnlyObjectWrapper<Short> observable = new ReadOnlyObjectWrapper<Short>();
 					observable.setValue( wrapped );
 					return( observable );
 				}
 			}
 		});
-		tableColumnSlice.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnSlice.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,Short>,TableCell<ICFBamDbKeyHash256GenObj,Short>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,Short> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,Short> arg)
 			{
 				return new CFInt16TableCell<ICFBamDbKeyHash256GenObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnSlice );
-		tableColumnBlockSize = new TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>( "BlockSize" );
-		tableColumnBlockSize.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, $implJavaOptAtomType$> p ) {
+		tableColumnBlockSize = new TableColumn<ICFBamDbKeyHash256GenObj,Integer>( "BlockSize" );
+		tableColumnBlockSize.setCellValueFactory( new Callback<CellDataFeatures<ICFBamDbKeyHash256GenObj,Integer>,ObservableValue<Integer> >() {
+			public ObservableValue<Integer> call( CellDataFeatures<ICFBamDbKeyHash256GenObj, Integer> p ) {
 				ICFBamDbKeyHash256GenObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredBlockSize();
-					$implJavaOptAtomType$ wrapped = $implJavaOptAtomType$.valueOf( value );
-					ReadOnlyObjectWrapper<$implJavaOptAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaOptAtomType$>();
+					int value = obj.getRequiredBlockSize();
+					Integer wrapped = Integer.valueOf( value );
+					ReadOnlyObjectWrapper<Integer> observable = new ReadOnlyObjectWrapper<Integer>();
 					observable.setValue( wrapped );
 					return( observable );
 				}
 			}
 		});
-		tableColumnBlockSize.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>,TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamDbKeyHash256GenObj,$implJavaOptAtomType$> arg)
+		tableColumnBlockSize.setCellFactory( new Callback<TableColumn<ICFBamDbKeyHash256GenObj,Integer>,TableCell<ICFBamDbKeyHash256GenObj,Integer>>() {
+			@Override public TableCell<ICFBamDbKeyHash256GenObj,Integer> call(
+				TableColumn<ICFBamDbKeyHash256GenObj,Integer> arg)
 			{
 				return new CFInt32TableCell<ICFBamDbKeyHash256GenObj>();
 			}

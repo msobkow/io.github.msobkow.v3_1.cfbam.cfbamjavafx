@@ -92,12 +92,12 @@ implements ICFBamJavaFXTweakPaneList
 	protected Collection<ICFBamTweakObj> javafxDataCollection = null;
 	protected ObservableList<ICFBamTweakObj> observableListOfTweak = null;
 	protected TableColumn<ICFBamTweakObj,String> tableColumnObjKind = null;
-	protected TableColumn<ICFBamTweakObj, $implJavaOptAtomType$> tableColumnTenantId = null;
-	protected TableColumn<ICFBamTweakObj, $implJavaOptAtomType$> tableColumnId = null;
-	protected TableColumn<ICFBamTweakObj, $implJavaOptAtomType$> tableColumnDefSchemaTenantId = null;
-	protected TableColumn<ICFBamTweakObj, $implJavaOptAtomType$> tableColumnName = null;
-	protected TableColumn<ICFBamTweakObj, $implJavaOptAtomType$> tableColumnReplacesInherited = null;
-	protected TableColumn<ICFBamTweakObj, $implJavaOptAtomType$> tableColumnTweakGelText = null;
+	protected TableColumn<ICFBamTweakObj, ICFLibKeyHash256> tableColumnTenantId = null;
+	protected TableColumn<ICFBamTweakObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamTweakObj, ICFLibKeyHash256> tableColumnDefSchemaTenantId = null;
+	protected TableColumn<ICFBamTweakObj, String> tableColumnName = null;
+	protected TableColumn<ICFBamTweakObj, Boolean> tableColumnReplacesInherited = null;
+	protected TableColumn<ICFBamTweakObj, String> tableColumnTweakGelText = null;
 	protected TableColumn<ICFBamTweakObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 	protected TableView<ICFBamTweakObj> dataTable = null;
 	protected CFHBox hboxMenu = null;
@@ -168,140 +168,140 @@ implements ICFBamJavaFXTweakPaneList
 			}
 		});
 		dataTable.getColumns().add( tableColumnObjKind );
-		tableColumnTenantId = new TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>( "Tenant Id" );
-		tableColumnTenantId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamTweakObj, $implJavaOptAtomType$> p ) {
+		tableColumnTenantId = new TableColumn<ICFBamTweakObj,ICFLibKeyHash256>( "Tenant Id" );
+		tableColumnTenantId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
+			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamTweakObj, ICFLibKeyHash256> p ) {
 				ICFBamTweakObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredTenantId();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					ICFLibKeyHash256 value = obj.getRequiredTenantId();
+					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnTenantId.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>,TableCell<ICFBamTweakObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamTweakObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamTweakObj,$implJavaOptAtomType$> arg)
+		tableColumnTenantId.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,ICFLibKeyHash256>,TableCell<ICFBamTweakObj,ICFLibKeyHash256>>() {
+			@Override public TableCell<ICFBamTweakObj,ICFLibKeyHash256> call(
+				TableColumn<ICFBamTweakObj,ICFLibKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamTweakObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnTenantId );
-		tableColumnId = new TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamTweakObj, $implJavaOptAtomType$> p ) {
+		tableColumnId = new TableColumn<ICFBamTweakObj,ICFLibKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
+			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamTweakObj, ICFLibKeyHash256> p ) {
 				ICFBamTweakObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					ICFLibKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>,TableCell<ICFBamTweakObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamTweakObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamTweakObj,$implJavaOptAtomType$> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,ICFLibKeyHash256>,TableCell<ICFBamTweakObj,ICFLibKeyHash256>>() {
+			@Override public TableCell<ICFBamTweakObj,ICFLibKeyHash256> call(
+				TableColumn<ICFBamTweakObj,ICFLibKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamTweakObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnId );
-		tableColumnDefSchemaTenantId = new TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>( "Defining Schema Tenant Id" );
-		tableColumnDefSchemaTenantId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamTweakObj, $implJavaOptAtomType$> p ) {
+		tableColumnDefSchemaTenantId = new TableColumn<ICFBamTweakObj,ICFLibKeyHash256>( "Defining Schema Tenant Id" );
+		tableColumnDefSchemaTenantId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
+			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamTweakObj, ICFLibKeyHash256> p ) {
 				ICFBamTweakObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getOptionalDefSchemaTenantId();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					ICFLibKeyHash256 value = obj.getOptionalDefSchemaTenantId();
+					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnDefSchemaTenantId.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>,TableCell<ICFBamTweakObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamTweakObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamTweakObj,$implJavaOptAtomType$> arg)
+		tableColumnDefSchemaTenantId.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,ICFLibKeyHash256>,TableCell<ICFBamTweakObj,ICFLibKeyHash256>>() {
+			@Override public TableCell<ICFBamTweakObj,ICFLibKeyHash256> call(
+				TableColumn<ICFBamTweakObj,ICFLibKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamTweakObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnDefSchemaTenantId );
-		tableColumnName = new TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>( "Name" );
-		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamTweakObj, $implJavaOptAtomType$> p ) {
+		tableColumnName = new TableColumn<ICFBamTweakObj,String>( "Name" );
+		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamTweakObj, String> p ) {
 				ICFBamTweakObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredName();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getRequiredName();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>,TableCell<ICFBamTweakObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamTweakObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamTweakObj,$implJavaOptAtomType$> arg)
+		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,String>,TableCell<ICFBamTweakObj,String>>() {
+			@Override public TableCell<ICFBamTweakObj,String> call(
+				TableColumn<ICFBamTweakObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamTweakObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnName );
-		tableColumnReplacesInherited = new TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>( "Replaces Inherited" );
-		tableColumnReplacesInherited.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamTweakObj, $implJavaOptAtomType$> p ) {
+		tableColumnReplacesInherited = new TableColumn<ICFBamTweakObj,Boolean>( "Replaces Inherited" );
+		tableColumnReplacesInherited.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,Boolean>,ObservableValue<Boolean> >() {
+			public ObservableValue<Boolean> call( CellDataFeatures<ICFBamTweakObj, Boolean> p ) {
 				ICFBamTweakObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredReplacesInherited();
-					$implJavaOptAtomType$ wrapped = $implJavaOptAtomType$.valueOf( value );
-					ReadOnlyObjectWrapper<$implJavaOptAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaOptAtomType$>();
+					boolean value = obj.getRequiredReplacesInherited();
+					Boolean wrapped = Boolean.valueOf( value );
+					ReadOnlyObjectWrapper<Boolean> observable = new ReadOnlyObjectWrapper<Boolean>();
 					observable.setValue( wrapped );
 					return( observable );
 				}
 			}
 		});
-		tableColumnReplacesInherited.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>,TableCell<ICFBamTweakObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamTweakObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamTweakObj,$implJavaOptAtomType$> arg)
+		tableColumnReplacesInherited.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,Boolean>,TableCell<ICFBamTweakObj,Boolean>>() {
+			@Override public TableCell<ICFBamTweakObj,Boolean> call(
+				TableColumn<ICFBamTweakObj,Boolean> arg)
 			{
 				return new CFBoolTableCell<ICFBamTweakObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnReplacesInherited );
-		tableColumnTweakGelText = new TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>( "GEL Text" );
-		tableColumnTweakGelText.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamTweakObj, $implJavaOptAtomType$> p ) {
+		tableColumnTweakGelText = new TableColumn<ICFBamTweakObj,String>( "GEL Text" );
+		tableColumnTweakGelText.setCellValueFactory( new Callback<CellDataFeatures<ICFBamTweakObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamTweakObj, String> p ) {
 				ICFBamTweakObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredTweakGelText();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getRequiredTweakGelText();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnTweakGelText.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,$implJavaOptAtomType$>,TableCell<ICFBamTweakObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamTweakObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamTweakObj,$implJavaOptAtomType$> arg)
+		tableColumnTweakGelText.setCellFactory( new Callback<TableColumn<ICFBamTweakObj,String>,TableCell<ICFBamTweakObj,String>>() {
+			@Override public TableCell<ICFBamTweakObj,String> call(
+				TableColumn<ICFBamTweakObj,String> arg)
 			{
 				return new CFTextTableCell<ICFBamTweakObj>();
 			}

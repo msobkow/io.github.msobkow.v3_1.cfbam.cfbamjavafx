@@ -91,11 +91,11 @@ implements ICFBamJavaFXSchemaRolePaneList
 	protected ICFBamJavaFXSchema javafxSchema = null;
 	protected Collection<ICFBamSchemaRoleObj> javafxDataCollection = null;
 	protected ObservableList<ICFBamSchemaRoleObj> observableListOfSchemaRole = null;
-	protected TableColumn<ICFBamSchemaRoleObj, $implJavaOptAtomType$> tableColumnId = null;
-	protected TableColumn<ICFBamSchemaRoleObj, $implJavaOptAtomType$> tableColumnName = null;
-	protected TableColumn<ICFBamSchemaRoleObj, $implJavaOptAtomType$> tableColumnEnables = null;
-	protected TableColumn<ICFBamSchemaRoleObj, $implJavaOptAtomType$> tableColumnIncludes = null;
-	protected TableColumn<ICFBamSchemaRoleObj, $implJavaOptAtomType$> tableColumnRoleScope = null;
+	protected TableColumn<ICFBamSchemaRoleObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamSchemaRoleObj, String> tableColumnName = null;
+	protected TableColumn<ICFBamSchemaRoleObj, String> tableColumnEnables = null;
+	protected TableColumn<ICFBamSchemaRoleObj, String> tableColumnIncludes = null;
+	protected TableColumn<ICFBamSchemaRoleObj, ICFBamPubSchema.RoleScopeEnum> tableColumnRoleScope = null;
 	protected TableColumn<ICFBamSchemaRoleObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 	protected TableView<ICFBamSchemaRoleObj> dataTable = null;
 	protected CFHBox hboxMenu = null;
@@ -143,116 +143,116 @@ implements ICFBamJavaFXSchemaRolePaneList
 		javafxContainer = argContainer;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamSchemaRoleObj>();
-		tableColumnId = new TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamSchemaRoleObj, $implJavaOptAtomType$> p ) {
+		tableColumnId = new TableColumn<ICFBamSchemaRoleObj,ICFLibKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
+			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamSchemaRoleObj, ICFLibKeyHash256> p ) {
 				ICFBamRoleDefObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					ICFLibKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$>,TableCell<ICFBamSchemaRoleObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamSchemaRoleObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,ICFLibKeyHash256>,TableCell<ICFBamSchemaRoleObj,ICFLibKeyHash256>>() {
+			@Override public TableCell<ICFBamSchemaRoleObj,ICFLibKeyHash256> call(
+				TableColumn<ICFBamSchemaRoleObj,ICFLibKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamSchemaRoleObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnId );
-		tableColumnName = new TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$>( "Name" );
-		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamSchemaRoleObj, $implJavaOptAtomType$> p ) {
+		tableColumnName = new TableColumn<ICFBamSchemaRoleObj,String>( "Name" );
+		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamSchemaRoleObj, String> p ) {
 				ICFBamRoleDefObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredName();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getRequiredName();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$>,TableCell<ICFBamSchemaRoleObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamSchemaRoleObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$> arg)
+		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,String>,TableCell<ICFBamSchemaRoleObj,String>>() {
+			@Override public TableCell<ICFBamSchemaRoleObj,String> call(
+				TableColumn<ICFBamSchemaRoleObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamSchemaRoleObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnName );
-		tableColumnEnables = new TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$>( "Enables" );
-		tableColumnEnables.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamSchemaRoleObj, $implJavaOptAtomType$> p ) {
+		tableColumnEnables = new TableColumn<ICFBamSchemaRoleObj,String>( "Enables" );
+		tableColumnEnables.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamSchemaRoleObj, String> p ) {
 				ICFBamRoleDefObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredEnables();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getRequiredEnables();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnEnables.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$>,TableCell<ICFBamSchemaRoleObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamSchemaRoleObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$> arg)
+		tableColumnEnables.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,String>,TableCell<ICFBamSchemaRoleObj,String>>() {
+			@Override public TableCell<ICFBamSchemaRoleObj,String> call(
+				TableColumn<ICFBamSchemaRoleObj,String> arg)
 			{
 				return new CFTextTableCell<ICFBamSchemaRoleObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnEnables );
-		tableColumnIncludes = new TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$>( "Includes" );
-		tableColumnIncludes.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamSchemaRoleObj, $implJavaOptAtomType$> p ) {
+		tableColumnIncludes = new TableColumn<ICFBamSchemaRoleObj,String>( "Includes" );
+		tableColumnIncludes.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamSchemaRoleObj, String> p ) {
 				ICFBamRoleDefObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredIncludes();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getRequiredIncludes();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnIncludes.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$>,TableCell<ICFBamSchemaRoleObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamSchemaRoleObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$> arg)
+		tableColumnIncludes.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,String>,TableCell<ICFBamSchemaRoleObj,String>>() {
+			@Override public TableCell<ICFBamSchemaRoleObj,String> call(
+				TableColumn<ICFBamSchemaRoleObj,String> arg)
 			{
 				return new CFTextTableCell<ICFBamSchemaRoleObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnIncludes );
-		tableColumnRoleScope = new TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$>( "Role Scope" );
-		tableColumnRoleScope.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamSchemaRoleObj, $implJavaOptAtomType$> p ) {
+		tableColumnRoleScope = new TableColumn<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum>( "Role Scope" );
+		tableColumnRoleScope.setCellValueFactory( new Callback<CellDataFeatures<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum>,ObservableValue<ICFBamPubSchema.RoleScopeEnum> >() {
+			public ObservableValue<ICFBamPubSchema.RoleScopeEnum> call( CellDataFeatures<ICFBamSchemaRoleObj, ICFBamPubSchema.RoleScopeEnum> p ) {
 				ICFBamSchemaRoleObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredRoleScope();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					ICFBamPubSchema.RoleScopeEnum value = obj.getRequiredRoleScope();
+					ReadOnlyObjectWrapper<ICFBamPubSchema.RoleScopeEnum> observable = new ReadOnlyObjectWrapper<ICFBamPubSchema.RoleScopeEnum>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnRoleScope.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$>,TableCell<ICFBamSchemaRoleObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamSchemaRoleObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamSchemaRoleObj,$implJavaOptAtomType$> arg)
+		tableColumnRoleScope.setCellFactory( new Callback<TableColumn<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum>,TableCell<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum>>() {
+			@Override public TableCell<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum> call(
+				TableColumn<ICFBamSchemaRoleObj,ICFBamPubSchema.RoleScopeEnum> arg)
 			{
 				return new CFEnumTableCell<ICFBamSchemaRoleObj,ICFBamSchema.RoleScopeEnum>();
 			}

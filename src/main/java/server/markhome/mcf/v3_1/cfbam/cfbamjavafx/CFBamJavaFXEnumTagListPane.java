@@ -98,9 +98,9 @@ implements ICFBamJavaFXEnumTagPaneList
 	protected CFButton buttonEditSelected = null;
 	protected CFButton buttonDeleteSelected = null;
 	protected TableView<ICFBamEnumTagObj> dataTable = null;
-	protected TableColumn<ICFBamEnumTagObj, $implJavaOptAtomType$> tableColumnId = null;
-	protected TableColumn<ICFBamEnumTagObj, $implJavaOptAtomType$> tableColumnEnumCode = null;
-	protected TableColumn<ICFBamEnumTagObj, $implJavaOptAtomType$> tableColumnName = null;
+	protected TableColumn<ICFBamEnumTagObj, ICFLibKeyHash256> tableColumnId = null;
+	protected TableColumn<ICFBamEnumTagObj, Short> tableColumnEnumCode = null;
+	protected TableColumn<ICFBamEnumTagObj, String> tableColumnName = null;
 	protected TableColumn<ICFBamEnumTagObj, ICFBamSchemaDefObj> tableColumnLookupDefSchema = null;
 
 	public final String S_ColumnNames[] = { "Name" };
@@ -190,70 +190,70 @@ implements ICFBamJavaFXEnumTagPaneList
 		javafxSortByChain = sortByChain;
 		setJavaFXDataCollection( argDataCollection );
 		dataTable = new TableView<ICFBamEnumTagObj>();
-		tableColumnId = new TableColumn<ICFBamEnumTagObj,$implJavaOptAtomType$>( "Id" );
-		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamEnumTagObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamEnumTagObj, $implJavaOptAtomType$> p ) {
+		tableColumnId = new TableColumn<ICFBamEnumTagObj,ICFLibKeyHash256>( "Id" );
+		tableColumnId.setCellValueFactory( new Callback<CellDataFeatures<ICFBamEnumTagObj,ICFLibKeyHash256>,ObservableValue<ICFLibKeyHash256> >() {
+			public ObservableValue<ICFLibKeyHash256> call( CellDataFeatures<ICFBamEnumTagObj, ICFLibKeyHash256> p ) {
 				ICFBamEnumTagObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredId();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					ICFLibKeyHash256 value = obj.getRequiredId();
+					ReadOnlyObjectWrapper<ICFLibKeyHash256> observable = new ReadOnlyObjectWrapper<ICFLibKeyHash256>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamEnumTagObj,$implJavaOptAtomType$>,TableCell<ICFBamEnumTagObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamEnumTagObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamEnumTagObj,$implJavaOptAtomType$> arg)
+		tableColumnId.setCellFactory( new Callback<TableColumn<ICFBamEnumTagObj,ICFLibKeyHash256>,TableCell<ICFBamEnumTagObj,ICFLibKeyHash256>>() {
+			@Override public TableCell<ICFBamEnumTagObj,ICFLibKeyHash256> call(
+				TableColumn<ICFBamEnumTagObj,ICFLibKeyHash256> arg)
 			{
 				return new CFDbKeyHash256TableCell<ICFBamEnumTagObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnId );
-		tableColumnEnumCode = new TableColumn<ICFBamEnumTagObj,$implJavaOptAtomType$>( "EnumCode" );
-		tableColumnEnumCode.setCellValueFactory( new Callback<CellDataFeatures<ICFBamEnumTagObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamEnumTagObj, $implJavaOptAtomType$> p ) {
+		tableColumnEnumCode = new TableColumn<ICFBamEnumTagObj,Short>( "EnumCode" );
+		tableColumnEnumCode.setCellValueFactory( new Callback<CellDataFeatures<ICFBamEnumTagObj,Short>,ObservableValue<Short> >() {
+			public ObservableValue<Short> call( CellDataFeatures<ICFBamEnumTagObj, Short> p ) {
 				ICFBamEnumTagObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getOptionalEnumCode();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					Short value = obj.getOptionalEnumCode();
+					ReadOnlyObjectWrapper<Short> observable = new ReadOnlyObjectWrapper<Short>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnEnumCode.setCellFactory( new Callback<TableColumn<ICFBamEnumTagObj,$implJavaOptAtomType$>,TableCell<ICFBamEnumTagObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamEnumTagObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamEnumTagObj,$implJavaOptAtomType$> arg)
+		tableColumnEnumCode.setCellFactory( new Callback<TableColumn<ICFBamEnumTagObj,Short>,TableCell<ICFBamEnumTagObj,Short>>() {
+			@Override public TableCell<ICFBamEnumTagObj,Short> call(
+				TableColumn<ICFBamEnumTagObj,Short> arg)
 			{
 				return new CFInt16TableCell<ICFBamEnumTagObj>();
 			}
 		});
 		dataTable.getColumns().add( tableColumnEnumCode );
-		tableColumnName = new TableColumn<ICFBamEnumTagObj,$implJavaOptAtomType$>( "Name" );
-		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamEnumTagObj,$implJavaOptAtomType$>,ObservableValue<$implJavaOptAtomType$> >() {
-			public ObservableValue<$implJavaOptAtomType$> call( CellDataFeatures<ICFBamEnumTagObj, $implJavaOptAtomType$> p ) {
+		tableColumnName = new TableColumn<ICFBamEnumTagObj,String>( "Name" );
+		tableColumnName.setCellValueFactory( new Callback<CellDataFeatures<ICFBamEnumTagObj,String>,ObservableValue<String> >() {
+			public ObservableValue<String> call( CellDataFeatures<ICFBamEnumTagObj, String> p ) {
 				ICFBamEnumTagObj obj = p.getValue();
 				if( obj == null ) {
 					return( null );
 				}
 				else {
-					$implJavaAtomType$ value = obj.getRequiredName();
-					ReadOnlyObjectWrapper<$implJavaAtomType$> observable = new ReadOnlyObjectWrapper<$implJavaAtomType$>();
+					String value = obj.getRequiredName();
+					ReadOnlyObjectWrapper<String> observable = new ReadOnlyObjectWrapper<String>();
 					observable.setValue( value );
 					return( observable );
 				}
 			}
 		});
-		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamEnumTagObj,$implJavaOptAtomType$>,TableCell<ICFBamEnumTagObj,$implJavaOptAtomType$>>() {
-			@Override public TableCell<ICFBamEnumTagObj,$implJavaOptAtomType$> call(
-				TableColumn<ICFBamEnumTagObj,$implJavaOptAtomType$> arg)
+		tableColumnName.setCellFactory( new Callback<TableColumn<ICFBamEnumTagObj,String>,TableCell<ICFBamEnumTagObj,String>>() {
+			@Override public TableCell<ICFBamEnumTagObj,String> call(
+				TableColumn<ICFBamEnumTagObj,String> arg)
 			{
 				return new CFStringTableCell<ICFBamEnumTagObj>();
 			}
